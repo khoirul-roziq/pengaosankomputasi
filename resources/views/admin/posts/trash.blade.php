@@ -32,7 +32,7 @@
                         @endforeach
                     </ul>
                 </td>
-                <td><img src="{{ asset('storage/'.$result->image) }}" alt="Thumbnail" class="img-fluid" width="100"></td>
+                <td><img src="{{ asset($result->image) }}" alt="Thumbnail" class="img-fluid" width="100"></td>
                 <td>
                     <form action="{{ url('posts/kill/'.$result->id) }}" method="post">
                         @csrf

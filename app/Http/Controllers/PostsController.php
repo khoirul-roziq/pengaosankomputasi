@@ -7,8 +7,9 @@ use Illuminate\Support\Str;
 use App\Models\Post;
 use App\Models\Tag;
 use App\Models\Category;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Auth;
 
 class PostsController extends Controller
@@ -57,11 +58,13 @@ class PostsController extends Controller
         $post->title = $request->title;
         $post->category_id = $request->category_id;
         $post->content = $request->content;
-        $post->image = $request->file('image')->store('uploads/posts');
+        $post->image = $request->file('image')->move('uploads/post', Str::slug($request->title).$request->file('image')->getClientOriginalName());
         $post->slug = Str::slug($request->title);
         $post->users_id = Auth::id();
 
         $query = $post->save();
+
+        
         
         $post->tags()->attach($request->tags);
 
@@ -114,9 +117,9 @@ class PostsController extends Controller
         ]);
         if($request->image) {
             $nameImage = DB::table('posts')->where('id', $post->id)->first();
-            Storage::delete($nameImage->image);
+            File::delete($nameImage->image);
             Post::where('id', $post->id)->update([
-                'image' => $request->file('image')->store('uploads/posts')
+                'image' => $request->file('image')->move('uploads/post', Str::slug($request->title).$request->file('image')->getClientOriginalName())
             ]);
         }
         Post::where('id', $post->id)->update([
@@ -159,6 +162,7 @@ class PostsController extends Controller
 
     public function kill($id) {
         $post = Post::withTrashed()->where('id', $id)->first();
+        File::delete($post->image);
         $post->forceDelete();
 
         return redirect()->back()->with('status', 'Post Berhasil Dihapus Secara Permanen');
