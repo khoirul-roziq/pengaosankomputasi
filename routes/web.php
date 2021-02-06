@@ -36,3 +36,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('/users',UsersController::class);
 });
 
+Route::get('/profile', function () {
+    return view('profile.index');
+});

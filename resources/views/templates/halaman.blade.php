@@ -39,7 +39,7 @@
             <a class="nav-link" href="#">E-book</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Profil</a>
+            <a class="nav-link" href="{{ url('/profile') }}">Profil</a>
         </li>
         </ul>
     </div>
