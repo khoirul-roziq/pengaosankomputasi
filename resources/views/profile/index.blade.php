@@ -9,15 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <!-- my style -->
-    <style>
-        section {
-            min-height:420px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('/assets/css/profile.css') }}">
 
     <!-- my script js -->
-
-    <script src="{{ asset('/assets/js/script.js') }}"></script>
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito+Sans&display=swap" rel="stylesheet">
@@ -29,23 +23,26 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-    <a class="navbar-brand page-scroll" href="{{ url('/') }}">PK</a>
+    <a class="navbar-brand" href="{{ url('/') }}">PK</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
         <ul class="navbar-nav">
         <li class="nav-item mr-4">
-            <a class="nav-link page-scroll" href="{{ url('/') }}">Beranda</a>
+            <a class="nav-link" href="{{ url('/') }}">Beranda</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link page-scroll mr-4" href="#about">About</a>
+            <a class="page-scroll nav-link mr-4" href="#">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link page-scroll mr-4" href="#portfolio">Portfolio</a>
+            <a class="page-scroll nav-link mr-4" href="#about1">About</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link page-scroll" href="#contact">Contact</a>
+            <a class="page-scroll nav-link mr-4" href="#portfolio1">Portfolio</a>
+        </li>
+        <li class="nav-item">
+            <a class="page-scroll nav-link" href="#contact1">Contact</a>
         </li>
         </ul>
     </div>
@@ -56,7 +53,7 @@
 
     <!-- jumbotron -->
     <div class="jumbotron jumbotron-fluid">
-    <div class="container text-center">
+    <div class="container text-center text-white">
         <img src="{{ asset('assets/img/imgProfil.jpg') }}" alt="" width="25%" class="rounded-circle img-thumbnail">
         <h1 class="display-4">Khoirul Roziq</h1>
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
@@ -64,6 +61,7 @@
     </div>
     <!-- end jumbotron -->
 
+    <div id="about1" class="mb-5 text-white">-</div>
     <section id="about" class="about">
     <div class="container">
         <div class="row mb-4">
@@ -81,7 +79,7 @@
         </div>
     </div>
     </section>
-
+    <div id="portfolio1" class="mb-4 text-white">-</div>
     <section id="portfolio" class="portfolio bg-light pb-4">
     <div class="container">
         <div class="row mb-4 pt-4">
@@ -169,8 +167,9 @@
         </div>
     </div>
     </section>
-
-    <section class="contact" id="contact">
+    
+    <span id="contact1" class="mb-5 text-white">-</span>
+    <section class="contact mt-5" id="contact">
     <div class="container">
         <div class="row pt-4 pb-4">
             <div class="col text-center">
@@ -185,7 +184,7 @@
                     <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, similique.</p>
                 </div>
                 </div>
-                <ul class="list-group">
+                <ul class="list-group mb-5">
                     <li class="list-group-item"><h1>Location</h1></li>
                     <li class="list-group-item">My Office</li>
                     <li class="list-group-item">Jl. Lapas Raya, Wayhuwi, Lam-Sel</li>
@@ -231,7 +230,8 @@
         <div class="row">
             <div class="col">
                 <a href="" class="mr-4">Tengtang Kami</a>
-                <a href="" >Profil</a>
+                <a href="" class="mr-4">Profil</a>
+                <a href='https://www.freepik.com/photos/technology'>Technology photo created by pressfoto - www.freepik.com</a>
             </div>
         </div>
     </footer>
@@ -241,7 +241,7 @@
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-
+    <!-- <script src="{{ asset('/assets/js/script.js') }}"></script> -->
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

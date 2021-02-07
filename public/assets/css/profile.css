@@ -1,0 +1,21 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.jumbotron {
+    background-image: url(../img/header-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section {
+    min-height:350px;
+}
+
+.jumbotron h1, .jumbotron p {
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.jumbotron img {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}

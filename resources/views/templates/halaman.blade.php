@@ -44,16 +44,23 @@
         </ul>
     </div>
     </nav>
-    <a href="https://www.freepik.com/vectors/business">Business vector created by freepik - www.freepik.com</a>
     <!-- end navbar -->
 
     @yield('main')
 
-    <footer>
-        <div>
-            <span>2021 Pengaosan Komputasi, Lampung</span>
-            <a href="" class="mx-4">Tengtang Kami</a>
-            <a href="" class="mx-2">Profil</a>
+    <footer class="bg-dark text-white py-3 mt-5">
+        <div class="container">
+        <div class="row">
+            <div class="col mb-1">
+                <span>2021 Pengaosan Komputasi, Lampung</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a href="" class="mr-4">Tengtang Kami</a>
+                <a href="" class="mr-4">Profil</a>
+                <a href="https://www.freepik.com/vectors/business">Business vector created by freepik - www.freepik.com</a>
+            </div>
         </div>
     </footer>
 
