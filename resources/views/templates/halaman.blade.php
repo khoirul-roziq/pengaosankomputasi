@@ -18,8 +18,8 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <a class="navbar-brand" href="#"> <strong>PK</strong></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" style="z-index:9999">
+    <a class="navbar-brand" href="{{ url('/') }}"> <strong>PK</strong></a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,13 +27,13 @@
     <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
         <ul class="navbar-nav">
         <li class="nav-item active">
-            <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{ url('/') }}">Dashboard <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Artikel</a>
+            <a class="nav-link" href="{{ url('/articles') }}">Artikel</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Materi</a>
+            <a class="nav-link" href="{{ url('/classes') }}">Kelas</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">E-book</a>
@@ -48,7 +48,7 @@
 
     @yield('main')
 
-    <footer class="bg-dark text-white py-3 mt-5">
+    <footer class="bg-dark text-white py-3">
         <div class="container">
         <div class="row">
             <div class="col mb-1">

@@ -56,7 +56,7 @@
     <div class="container text-center text-white">
         <img src="{{ asset('assets/img/imgProfil.jpg') }}" alt="" width="25%" class="rounded-circle img-thumbnail">
         <h1 class="display-4">Khoirul Roziq</h1>
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <p class="lead">Software Developer</p>
     </div>
     </div>
     <!-- end jumbotron -->

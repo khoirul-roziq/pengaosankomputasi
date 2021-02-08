@@ -6,6 +6,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\ClassesController;
 
 
 /*
@@ -21,9 +24,7 @@ use App\Http\Controllers\UsersController;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [BlogController::class, 'index']);
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -36,6 +37,11 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('/users',UsersController::class);
 });
 
+Route::resource('/classes',ClassesController::class);
+Route::resource('/articles',ArticlesController::class);
+
 Route::get('/profile', function () {
     return view('profile.index');
 });
+
+

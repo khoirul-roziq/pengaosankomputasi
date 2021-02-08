@@ -41,7 +41,7 @@ body {
 
 /* end landing page */
 
-#carouselExampleCaptions {
+#infomedia {
     margin-top: 200px;
 }
 
@@ -52,7 +52,7 @@ body {
     display: grid;
     grid-template-rows: 1fr 5fr 1fr 1fr 1fr;
     padding: 2% 0;
-    background-color: rgba(0,0,0, 0.8);
+    /* background-color: rgba(0,0,0, 0.8); */
     color: rgb(240, 240, 240);
 }
 
