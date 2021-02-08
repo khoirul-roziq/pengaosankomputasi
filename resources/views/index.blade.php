@@ -12,7 +12,9 @@
     <a href="#" class="btn btn-outline-primary">Mulai Belajar</a>
     <button class="btn btn-"></button>
 </div>
-
+<div class="infomedia">
+  <h1>Belajar di Situs<br>Pengaosan Komputasi</h1>
+</div>
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
