@@ -41,10 +41,6 @@ body {
 
 /* end landing page */
 
-.infomedia {
-    margin-top: 200px;
-}
-
 /* pengisi materi */
 .penulis {
     width: 100%;
@@ -85,7 +81,7 @@ body {
 
 .sosmed {
     margin-top: 10px;
-    height: 50px;    
+    height: 50px;
     justify-self: center;
 }
 
@@ -93,7 +89,6 @@ body {
     display: inline-block;
     justify-items: center;
 }
-
 
 @media screen and (max-width: 768px) {
     .landingPage {
