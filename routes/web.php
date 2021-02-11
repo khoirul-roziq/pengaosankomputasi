@@ -9,6 +9,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\TutorialsController;
 
 
 /*
@@ -25,23 +26,28 @@ use App\Http\Controllers\ClassesController;
 Auth::routes();
 
 Route::get('/', [BlogController::class, 'index']);
+Route::resource('/classes', ClassesController::class);
+Route::get('/classes/{slug}', [ClassesController::class, 'show']);
 
-Route::group(['middleware' => 'auth'], function() {
+Route::resource('/articles', ArticlesController::class);
+Route::get('/articles/{slug}', [ArticlesController::class, 'show']);
+
+Route::resource('/tutorials', TutorialsController::class);
+Route::get('/tutorials/{slug}', [TutorialsController::class, 'show']);
+
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::resource('/category',CategoryController::class);
-    Route::resource('/tags',TagsController::class);
+    Route::resource('/category', CategoryController::class);
+    Route::resource('/tags', TagsController::class);
     Route::get('/posts/trash', [PostsController::class, 'trash']);
     Route::get('/posts/restore/{id}', [PostsController::class, 'restore']);
     Route::delete('/posts/kill/{id}', [PostsController::class, 'kill']);
-    Route::resource('/posts',PostsController::class);
-    Route::resource('/users',UsersController::class);
+    Route::resource('/posts', PostsController::class);
+    Route::resource('/users', UsersController::class);
 });
 
-Route::resource('/classes',ClassesController::class);
-Route::resource('/articles',ArticlesController::class);
+
 
 Route::get('/profile', function () {
     return view('profile.index');
 });
-
-

@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <!-- my style -->
-    <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/styleArticles.css') }}">
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito+Sans&display=swap" rel="stylesheet">
 
-    <title>@yield('title') | Pengaosan Komputasi</title>
+    <title>Tutorial | Pengaosan Komputasi</title>
 </head>
 
 <body>
@@ -68,7 +68,62 @@
     </nav>
     <!-- end navbar -->
 
-    @yield('main')
+    <br><br><br>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb px-5">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ url('/tutorials') }}">Tutorial</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Daftar Tutorial</li>
+        </ol>
+    </nav>
+
+    <div class="jumbotron bg-dark text-white">
+        <h1 class="display-4">Daftar Tutorial</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4 bg-warning">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Semua</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kategori</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            @foreach($posts as $post)
+            <div class="card mb-3 mx-2">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{ asset($post->image) }}" class="m-3" alt="..." width="300">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h5 class="card-title">Ini adalah judul untuk mencoba daftar</h5>
+                            <hr>
+                            <span class="card-text">Kategori : <span class="text-info">
+                                    @foreach( $categories as $category)
+                                    @if($post->category_id == $category->id)
+                                    {{ $category->name }}
+                                    @endif
+                                    @endforeach
+                                </span></span>
+                            <br>
+                            <span class="card-text">Penulis : <span class="text-info">{{ $post->users->name }}</span></span>
+                            <p class="card-text"><small class="text-muted">Pembaharuan Terakhir 8 Februari 2021</small></p>
+                            <a href="{{ url('articles/'.$post->slug) }}" class="btn btn-primary btn-sm">Baca Artikel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
 
     <footer class="bg-dark text-white py-3">
         <div class="container">
@@ -81,7 +136,6 @@
                 <div class="col">
                     <a href="" class="mr-4">Tengtang Kami</a>
                     <a href="" class="mr-4">Profil</a>
-                    <a href="https://www.freepik.com/vectors/business">Business vector created by freepik - www.freepik.com</a>
                 </div>
             </div>
     </footer>

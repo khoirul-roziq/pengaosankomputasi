@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-image: url(../img/bg1.png);
     background-position: top right;
@@ -62,7 +66,8 @@ body {
 .penulis h3 {
     align-self: flex-end;
     justify-self: center;
-    font-size: 16px;
+    font-size: 22px;
+    margin-top: 20px;
 }
 
 .penulis h4 {

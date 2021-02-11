@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 
-class ClassesController extends Controller
+class TutorialsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class ClassesController extends Controller
     {
         $posts = Post::all();
         $categories = Category::all();
-        return view('classes.index', compact('posts', 'categories'));
+        return view('tutorials.index', compact('posts', 'categories'));
     }
 
     /**
@@ -50,7 +50,7 @@ class ClassesController extends Controller
     public function show($slug)
     {
         $post = Post::where('slug', $slug)->first();
-        return view('classes.show', compact('post'));
+        return view('tutorials.show', compact('post'));
     }
 
     /**

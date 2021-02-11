@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Category;
 
 class ArticlesController extends Controller
 {
@@ -13,7 +15,9 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        return view('articles.index');
+        $posts = Post::all();
+        $categories = Category::all();
+        return view('articles.index', compact('posts', 'categories'));
     }
 
     /**
@@ -43,9 +47,10 @@ class ArticlesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $post = Post::where('slug', $slug)->first();
+        return view('articles.show', compact('post'));
     }
 
     /**

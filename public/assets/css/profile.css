@@ -9,13 +9,28 @@ html {
 }
 
 section {
-    min-height:350px;
+    min-height: 300px;
 }
 
-.jumbotron h1, .jumbotron p {
+.jumbotron h1,
+.jumbotron p {
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
 .jumbotron img {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: fixed;
+    width: 100%;
+}
+
+.nav-item {
+    margin-left: 15px;
+    margin-right: 15px;
 }

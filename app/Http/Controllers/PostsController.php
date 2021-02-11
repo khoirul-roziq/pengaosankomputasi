@@ -54,18 +54,18 @@ class PostsController extends Controller
         ]);
 
         $post = new Post;
-        
+
         $post->title = $request->title;
         $post->category_id = $request->category_id;
         $post->content = $request->content;
-        $post->image = $request->file('image')->move('uploads/post', Str::slug($request->title).$request->file('image')->getClientOriginalName());
+        $post->image = $request->file('image')->move('uploads/post', Str::slug($request->title) . $request->file('image')->getClientOriginalName());
         $post->slug = Str::slug($request->title);
         $post->users_id = Auth::id();
 
         $query = $post->save();
 
-        
-        
+
+
         $post->tags()->attach($request->tags);
 
         if ($query) {
@@ -83,8 +83,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::findorfail($id);
-        return view('guest.posts.show', compact('post'));
+        // $post = Post::findorfail($id);
+        // return view('guest.posts.show', compact('post'));
     }
 
     /**
@@ -115,22 +115,23 @@ class PostsController extends Controller
             'category_id' => 'required',
             'content' => 'required',
         ]);
-        if($request->image) {
+        if ($request->image) {
             $nameImage = DB::table('posts')->where('id', $post->id)->first();
             File::delete($nameImage->image);
             Post::where('id', $post->id)->update([
-                'image' => $request->file('image')->move('uploads/post', Str::slug($request->title).$request->file('image')->getClientOriginalName())
+                'image' => $request->file('image')->move('uploads/post', Str::slug($request->title) . $request->file('image')->getClientOriginalName())
             ]);
         }
         Post::where('id', $post->id)->update([
             'title' => $request->title,
             'category_id' => $request->category_id,
+            'slug' => Str::slug($request->title),
             'content' => $request->content,
         ]);
 
         $post->tags()->sync($request->tags);
-        
-        return redirect('posts')->with('status', 'Data Post Berhasil Diubah!');  
+
+        return redirect('posts')->with('status', 'Data Post Berhasil Diubah!');
     }
 
     /**
@@ -144,23 +145,26 @@ class PostsController extends Controller
         $post = Post::findorfail($id);
         $post->delete();
 
-        return redirect('posts')->with('status', 'Post Berhasil Dihapus!');  
-    }
-    
-    public function trash() {
-        $posts = Post::onlyTrashed()->simplePaginate(5);
-        $count = Post::onlyTrashed()->count();
-        return view('admin.posts.trash', compact('posts','count'))->with('title', 'Trash');
+        return redirect('posts')->with('status', 'Post Berhasil Dihapus!');
     }
 
-    public function restore($id) {
+    public function trash()
+    {
+        $posts = Post::onlyTrashed()->simplePaginate(5);
+        $count = Post::onlyTrashed()->count();
+        return view('admin.posts.trash', compact('posts', 'count'))->with('title', 'Trash');
+    }
+
+    public function restore($id)
+    {
         $post = Post::withTrashed()->where('id', $id)->first();
         $post->restore();
 
         return redirect()->back()->with('status', 'Post berhasil direstore!');
     }
 
-    public function kill($id) {
+    public function kill($id)
+    {
         $post = Post::withTrashed()->where('id', $id)->first();
         File::delete($post->image);
         $post->forceDelete();

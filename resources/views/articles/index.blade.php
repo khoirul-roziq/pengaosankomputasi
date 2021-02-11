@@ -15,12 +15,12 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito+Sans&display=swap" rel="stylesheet">
 
-    <title>Kelas | Pengaosan Komputasi</title>
+    <title>Artikel | Pengaosan Komputasi</title>
 </head>
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top" style="z-index:9999">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" style="z-index:9999">
         <a class="navbar-brand" href="{{ url('/') }}"> <strong>PK</strong></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,20 +31,34 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/') }}">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/articles') }}">Artikel</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Fasilitas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url('/articles') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                                <path d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
+                            </svg> Artikel</a>
+                        <a class="dropdown-item" href="{{ url('/tutorials') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z" />
+                            </svg> Tutorial</a>
+                        <a class="dropdown-item" href="{{ url('/classes') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                            </svg> Kelas</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/channel/UCQ7x8K2aTpN4sHWquWbKweA"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-play" viewBox="0 0 16 16">
+                                <path d="M6 10.117V5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43z" />
+                                <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                            </svg> Video</a>
+                        <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-code" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z" />
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                            </svg> E-Book</a>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">Tutorial</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/classes') }}">Kelas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">E-book</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/profile') }}">Penulis</a>
+                    <a class="nav-link" href="{{ url('/profile') }}">Author</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/login') }}"><span class="badge badge-dark py-2 px-3">Login</span></a>
@@ -54,28 +68,61 @@
     </nav>
     <!-- end navbar -->
 
-    <div class="alert alert-secondary text-right py-3" role="alert" id="tab">
-        <span class="text mx-3">Beranda</span>|<span class="text mx-3">Kelas</span>|<span class="text mx-3 text-info">Daftar Kelas</span>
-    </div>
+    <br><br><br>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb px-5">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ url('/articles') }}">Artikel</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Daftar Artikel</li>
+        </ol>
+    </nav>
 
-    <div class="jumbotron bg-warning">
-        <h1 class="display-4 mt-5">Artikel</h1>
+    <div class="jumbotron bg-dark text-white">
+        <h1 class="display-4">Daftar Artikel</h1>
         <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
+        <hr class="my-4 bg-warning">
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
 
-    <div class="row justify-content-center">
-        @for ($i = 0; $i < 5; $i++) <div class="card m-2" style="width: 18rem;">
-            <img src="{{ asset('assets/img/img1.jpg')}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Semua</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kategori</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            @foreach($posts as $post)
+            <div class="card mb-3 mx-2">
+                <div class="row no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{ asset($post->image) }}" class="m-3" alt="..." width="300">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h5 class="card-title">Ini adalah judul untuk mencoba daftar</h5>
+                            <hr>
+                            <span class="card-text">Kategori : <span class="text-info">
+                                    @foreach( $categories as $category)
+                                    @if($post->category_id == $category->id)
+                                    {{ $category->name }}
+                                    @endif
+                                    @endforeach
+                                </span></span>
+                            <br>
+                            <span class="card-text">Penulis : <span class="text-info">{{ $post->users->name }}</span></span>
+                            <p class="card-text"><small class="text-muted">Pembaharuan Terakhir 8 Februari 2021</small></p>
+                            <a href="{{ url('articles/'.$post->slug) }}" class="btn btn-primary btn-sm">Baca Artikel</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-    </div>
-    @endfor
+            @endforeach
+        </div>
     </div>
 
     <footer class="bg-dark text-white py-3">
