@@ -15,7 +15,8 @@ class TutorialsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $type = "Tutorial";
+        $posts = Post::where('type', $type)->get();
         $categories = Category::all();
         return view('tutorials.index', compact('posts', 'categories'));
     }
@@ -50,7 +51,8 @@ class TutorialsController extends Controller
     public function show($slug)
     {
         $post = Post::where('slug', $slug)->first();
-        return view('tutorials.show', compact('post'));
+        $categories = Category::all();
+        return view('tutorials.show', compact('post', 'categories'));
     }
 
     /**

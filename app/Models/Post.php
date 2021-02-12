@@ -11,15 +11,18 @@ class Post extends Model
     use HasFactory;
     use SoftDeletes;
 
-    public function category() {
+    public function category()
+    {
         return $this->belongsTo('App\Models\Category');
     }
 
-    public function tags() {
+    public function tags()
+    {
         return $this->belongsToMany('App\Models\Tag');
     }
 
-    public function users() {
+    public function users()
+    {
         return $this->belongsTo('App\Models\User');
     }
 }

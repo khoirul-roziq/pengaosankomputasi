@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\Type;
 use App\Models\Category;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
@@ -50,6 +51,9 @@ class PostsController extends Controller
             'title' => 'required|min:3',
             'category_id' => 'required',
             'content' => 'required',
+            'tanggal' => 'required',
+            'metades' => 'required',
+            'sumberimg' => 'required',
             'image' => 'required'
         ]);
 
@@ -57,8 +61,12 @@ class PostsController extends Controller
 
         $post->title = $request->title;
         $post->category_id = $request->category_id;
+        $post->type = $request->type;
         $post->content = $request->content;
+        $post->tanggal = $request->tanggal;
+        $post->metades = $request->metades;
         $post->image = $request->file('image')->move('uploads/post', Str::slug($request->title) . $request->file('image')->getClientOriginalName());
+        $post->sumberimg = $request->sumberimg;
         $post->slug = Str::slug($request->title);
         $post->users_id = Auth::id();
 
@@ -124,7 +132,11 @@ class PostsController extends Controller
         }
         Post::where('id', $post->id)->update([
             'title' => $request->title,
+            'tanggal' => $request->tanggal,
+            'sumberimg' => $request->sumberimg,
+            'metades' => $request->metades,
             'category_id' => $request->category_id,
+            'type' => $request->type,
             'slug' => Str::slug($request->title),
             'content' => $request->content,
         ]);

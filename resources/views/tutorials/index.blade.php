@@ -102,7 +102,7 @@
                     <div class="col-md-3">
                         <img src="{{ asset($post->image) }}" class="m-3" alt="..." width="300">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 my-auto">
                         <div class="card-body">
                             <h5 class="card-title">Ini adalah judul untuk mencoba daftar</h5>
                             <hr>
@@ -115,8 +115,8 @@
                                 </span></span>
                             <br>
                             <span class="card-text">Penulis : <span class="text-info">{{ $post->users->name }}</span></span>
-                            <p class="card-text"><small class="text-muted">Pembaharuan Terakhir 8 Februari 2021</small></p>
-                            <a href="{{ url('articles/'.$post->slug) }}" class="btn btn-primary btn-sm">Baca Artikel</a>
+                            <p class="card-text"><small class="text-muted">Pembaharuan Terakhir {{ $post->tanggal }}</small></p>
+                            <a href="{{ url('tutorials/'.$post->slug) }}" class="btn btn-primary btn-sm">Lihat Tutorial</a>
                         </div>
                     </div>
                 </div>

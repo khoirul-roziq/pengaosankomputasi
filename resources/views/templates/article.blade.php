@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Website untuk belajar komputasi secara gratis">
+    <meta name="description" content="@yield('metades')">
     <meta name="author" content="Khoirul Roziq">
     <meta name="robots" content="index,follow">
 
@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <!-- my style -->
-    <link rel="stylesheet" href="{{ url('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/styleArticles.css') }}">
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito+Sans&display=swap" rel="stylesheet">
 
-    <title>@yield('title') | Pengaosan Komputasi</title>
+    <title>@yield('title') &mdash; Pengaosan Komputasi</title>
 </head>
 
 <body>
@@ -84,7 +84,6 @@
                 <div class="col">
                     <a href="" class="mr-4">Tengtang Kami</a>
                     <a href="" class="mr-4">Profil</a>
-                    <a href="https://www.freepik.com/vectors/business">Business vector created by freepik - www.freepik.com</a>
                 </div>
             </div>
     </footer>

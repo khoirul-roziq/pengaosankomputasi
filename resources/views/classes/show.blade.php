@@ -63,7 +63,7 @@
             <div class="col-md-4">
                 <img src="{{ asset('/assets/img/img3.jpg') }}" alt="..." width="380" height="250" class="m-3">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 my-auto">
                 <div class="card-body">
                     <h2 class="card-title">Judul Artikel Untuk Belajar Tutorial</h2>
                     <span class="card-text">Disusun Oleh: <span class="text-danger">Khoirul Roziq</span></span><br>

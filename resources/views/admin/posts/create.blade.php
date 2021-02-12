@@ -41,6 +41,19 @@
             </div>
         </div>
         <div class="form-group">
+            <label>Type</label>
+            <select class="form-control @error('type') is-invalid @enderror" name="type" id="type">
+                <option value="" holder>-- Pilih Type --</option>
+                <option value="Artikel">Artikel</option>
+                <option value="Tutorial">Tutorial</option>
+            </select>
+            <div class="invalid-feedback">
+                @error('type')
+                {{ $message }}
+                @enderror
+            </div>
+        </div>
+        <div class="form-group">
             <label>Pilih Tag</label>
             <select class="form-control select2" multiple="" name="tags[]">
                 @foreach( $tags as $tag)
@@ -57,7 +70,33 @@
                 @enderror
             </div>
         </div>
-
+        <div class="form-group">
+            <label>Sumber Thumbnail</label>
+            <input type="text" class="form-control @error('sumberimg') is-invalid @enderror" name="sumberimg" value="{{ old('sumberimg') }}">
+            <div class="invalid-feedback">
+                @error('sumberimg')
+                {{ $message }}
+                @enderror
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Tanggal</label>
+            <input type="text" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal') }}">
+            <div class="invalid-feedback">
+                @error('tanggal')
+                {{ $message }}
+                @enderror
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Meta Deskripsi</label>
+            <input type="text" class="form-control @error('metades') is-invalid @enderror" name="metades" value="{{ old('metades') }}">
+            <div class="invalid-feedback">
+                @error('metades')
+                {{ $message }}
+                @enderror
+            </div>
+        </div>
         <header class="header-a">
             <div class="grid-container">
                 <h3 class="header-a-logo grid-width-30">

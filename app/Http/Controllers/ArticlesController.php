@@ -15,7 +15,8 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $type = "Artikel";
+        $posts = Post::where('type', $type)->get();
         $categories = Category::all();
         return view('articles.index', compact('posts', 'categories'));
     }

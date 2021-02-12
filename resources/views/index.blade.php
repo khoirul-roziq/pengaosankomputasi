@@ -1,11 +1,11 @@
 @extends('templates/halaman')
-@section('title', 'Dashboard')
+@section('title', 'Situs Belajar Keilmuan Komputasi Secara Gratis dan Media Berbagi Pengalaman')
 @section('main')
 
 <div class="landingPage">
   <h2 class="my-3"><b>PENGAOSAN KOMPUTASI</b></h2>
   <hr>
-  <p>Situs Belajar Keilmuan Komputasi dan Media Berbagi Pengalaman <br>
+  <p>Situs Belajar Keilmuan Komputasi Secara Gratis dan Media Berbagi Pengalaman <br>
     Jangan Lupa Berdoa Sebelum dan Sesudah Belajar<br>
     Semoga Keberkahan Terlimpahkan Untuk Kita Semua
   </p>
@@ -63,10 +63,9 @@
     <div class="col-md-6">
       <div class="card mb-3">
         <img src="{{ asset('assets/img/img2.jpg')}}" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div class="card-body py-5">
           <h5 class="card-title">Belajar Komputasional Thinking</h5>
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
     </div>
@@ -90,101 +89,121 @@
     </div>
   </div>
 </section>
+
 <hr id="fasilitas" width="1">
 <br>
-<section class="type mx-5 text-center">
-  <h2 class="mb-4 mt-5 text-primary">Mulai Belajar Komputasi Sekarang!</h2>
+<section class="type mx-5">
+  <h2 class="mb-4 mt-5 text-primary text-center">Mulai Belajar Komputasi Sekarang!</h2>
   <hr class="bg-warning" width="50%" style="border: 1px solid orange;">
   <div class="row justify-content-center">
-
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div class="card mb-3">
         <div class="row no-gutters">
-          <div class="col-md-4 p-4">
-            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="200" height="200">
+          <div class="col-md-4 p-2">
+            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
           </div>
           <div class="col-md-8">
-            <div class="card-body ml-2">
+            <div class="card-body">
               <h5 class="card-title"><strong>Artikel</strong></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              <a href="#" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+              <p class="card-text"><small class="text-muted">1202 Artikel </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
             </div>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-md-12 p-2">
+            <p class="card-text">Memperluas wawasan pengetahuan seputar ilmu komputasi dengan membaca artikel.</p>
+            <a href="{{ url('/articles')}}" class="btn btn-primary btn-sm px-4">Kunjungi</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div class="card mb-3">
         <div class="row no-gutters">
-          <div class="col-md-4 p-4">
-            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="200" height="200">
+          <div class="col-md-4 p-2">
+            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
           </div>
           <div class="col-md-8">
-            <div class="card-body ml-2">
+            <div class="card-body">
               <h5 class="card-title"><strong>Tutorial</strong></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              <a href="#" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+              <p class="card-text"><small class="text-muted">1202 Tutorial </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
             </div>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-md-12 p-2">
+            <p class="card-text">Pecahkan masalah komputasi dengan mempelajari tutorial yang relevan terhadap permasalahan yang dihadapi.</p>
+            <a href="{{ url('/tutorials') }}" class="btn btn-primary btn-sm px-4">Kunjungi</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div class="card mb-3">
         <div class="row no-gutters">
-          <div class="col-md-4 p-4">
-            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="200" height="200">
+          <div class="col-md-4 p-2">
+            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
           </div>
           <div class="col-md-8">
-            <div class="card-body ml-2">
+            <div class="card-body">
               <h5 class="card-title"><strong>Kelas</strong></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              <a href="#" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+              <p class="card-text"><small class="text-muted">1202 Kelas </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
             </div>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-md-12 p-2">
+            <p class="card-text">Mendalami keilmuan komputer dengan mengikuti kelas-kelas yang disediakan secara bebas.</p>
+            <a href="{{ url('/classes') }}" class="btn btn-primary btn-sm px-4">Kunjungi</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div class="card mb-3">
         <div class="row no-gutters">
-          <div class="col-md-4 p-4">
-            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="200" height="200">
+          <div class="col-md-4 p-2">
+            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
           </div>
           <div class="col-md-8">
-            <div class="card-body ml-2">
+            <div class="card-body">
               <h5 class="card-title"><strong>Video</strong></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              <a href="#" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+              <p class="card-text"><small class="text-muted">1202 Video </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
             </div>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-md-12 p-2">
+            <p class="card-text">Tingkatkan pemahaman materi dengan menonton video pembelajaran.</p>
+            <a href="https://www.youtube.com/channel/UCQ7x8K2aTpN4sHWquWbKweA" class="btn btn-primary btn-sm px-4">Kunjungi</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-5">
       <div class="card mb-3">
         <div class="row no-gutters">
-          <div class="col-md-4 p-4">
-            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="200" height="200">
+          <div class="col-md-4 p-2">
+            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
           </div>
           <div class="col-md-8">
-            <div class="card-body ml-2">
+            <div class="card-body">
               <h5 class="card-title"><strong>E-Book</strong></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              <a href="#" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+              <p class="card-text"><small class="text-muted">1202 E-Book </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
             </div>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-md-12 p-2">
+            <p class="card-text">Tingkatkan pengetahuan dengan cara rajin membaca E-Book secara bebas.</p>
+            <a href="#" class="btn btn-primary btn-sm px-4">Kunjungi</a>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
+
 
 
 <!-- <div class="container">

@@ -107,7 +107,7 @@
                     <div class="col-md-3">
                         <img src="{{ asset($post->image) }}" class="m-3" alt="..." width="280">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 my-auto">
                         <div class="card-body">
                             <h5 class="card-title">{{ $post->title }}</h5>
                             <hr>
