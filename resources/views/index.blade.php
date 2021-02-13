@@ -102,7 +102,7 @@
           <div class="col-md-4 p-2">
             <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Artikel</strong></h5>
               <p class="card-text"><small class="text-muted">1202 Artikel </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
@@ -123,7 +123,7 @@
           <div class="col-md-4 p-2">
             <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Tutorial</strong></h5>
               <p class="card-text"><small class="text-muted">1202 Tutorial </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
@@ -144,7 +144,7 @@
           <div class="col-md-4 p-2">
             <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Kelas</strong></h5>
               <p class="card-text"><small class="text-muted">1202 Kelas </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
@@ -165,7 +165,7 @@
           <div class="col-md-4 p-2">
             <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Video</strong></h5>
               <p class="card-text"><small class="text-muted">1202 Video </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
@@ -175,7 +175,7 @@
         <div class="row no-gutters">
           <div class="col-md-12 p-2">
             <p class="card-text">Tingkatkan pemahaman materi dengan menonton video pembelajaran.</p>
-            <a href="https://www.youtube.com/channel/UCQ7x8K2aTpN4sHWquWbKweA" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+            <a href="https://www.youtube.com/c/PengaosanKomputasi" class="btn btn-primary btn-sm px-4">Kunjungi</a>
           </div>
         </div>
       </div>
@@ -186,7 +186,7 @@
           <div class="col-md-4 p-2">
             <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>E-Book</strong></h5>
               <p class="card-text"><small class="text-muted">1202 E-Book </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>

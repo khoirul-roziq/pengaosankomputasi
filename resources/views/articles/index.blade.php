@@ -25,9 +25,6 @@
             <li class="nav-item">
                 <a class="nav-link active" href="#">Semua</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Kategori</a>
-            </li>
         </ul>
     </div>
     <div class="card-body">
@@ -39,7 +36,7 @@
                 </div>
                 <div class="col-md-9 my-auto">
                     <div class="card-body">
-                        <h5 class="card-title">Ini adalah judul untuk mencoba daftar</h5>
+                        <h5 class="card-title">{{ $post->title }}</h5>
                         <hr>
                         <span class="card-text">Kategori : <span class="text-info">
                                 @foreach( $categories as $category)
@@ -50,7 +47,7 @@
                             </span></span>
                         <br>
                         <span class="card-text">Penulis : <span class="text-info">{{ $post->users->name }}</span></span>
-                        <p class="card-text"><small class="text-muted">Pembaharuan Terakhir 8 Februari 2021</small></p>
+                        <p class="card-text"><small class="text-muted">Pembaharuan Terakhir {{ $post->tanggal }}</small></p>
                         <a href="{{ url('articles/'.$post->slug) }}" class="btn btn-primary btn-sm">Baca Artikel</a>
                     </div>
                 </div>
