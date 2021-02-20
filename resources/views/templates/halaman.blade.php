@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Website untuk belajar komputasi secara gratis">
+    <meta name="description" content="Website untuk belajar komputer secara gratis">
     <meta name="author" content="Khoirul Roziq">
     <meta name="robots" content="index,follow">
 
@@ -24,7 +24,9 @@
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" style="z-index:9999">
-        <a class="navbar-brand" href="{{ url('/') }}"> <strong>PK</strong></a>
+        <a class="navbar-brand" href="{{ url('/')}}">
+            <img src="{{asset('assets/img/brand.png')}}" height="30" class="d-inline-block align-top" alt="">
+        </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -7,7 +7,6 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb px-5">
         <li class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ url('/articles') }}">Artikel</a></li>
         <li class="breadcrumb-item active" aria-current="page">Daftar Artikel</li>
     </ol>
 </nav>

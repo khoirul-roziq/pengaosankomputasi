@@ -9,6 +9,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\ModulesController;
 use App\Http\Controllers\TutorialsController;
 
 
@@ -26,8 +27,7 @@ use App\Http\Controllers\TutorialsController;
 Auth::routes();
 
 Route::get('/', [BlogController::class, 'index']);
-Route::resource('/classes', ClassesController::class);
-Route::get('/classes/{slug}', [ClassesController::class, 'show']);
+// Route::get('/classes/{slug}', [ClassesController::class, 'show']);
 
 Route::resource('/articles', ArticlesController::class);
 Route::get('/articles/{slug}', [ArticlesController::class, 'show']);
@@ -44,6 +44,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/posts/kill/{id}', [PostsController::class, 'kill']);
     Route::resource('/posts', PostsController::class);
     Route::resource('/users', UsersController::class);
+    Route::get('/classes/trash', [ClassesController::class, 'trash']);
+    Route::get('/classes/restore/{id}', [ClassesController::class, 'restore']);
+    Route::delete('/classes/kill/{id}', [ClassesController::class, 'kill']);
+    Route::resource('/classes', ClassesController::class);
+    Route::resource('/modules', ModulesController::class);
 });
 
 

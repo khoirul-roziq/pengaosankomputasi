@@ -97,106 +97,106 @@
   <hr class="bg-warning" width="50%" style="border: 1px solid orange;">
   <div class="row justify-content-center">
     <div class="col-md-5">
-      <div class="card mb-3">
+      <div class="card mb-3 shadow">
         <div class="row no-gutters">
           <div class="col-md-4 p-2">
-            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
+            <img src="{{ asset('assets/img/logoartikel.png')}}" alt="..." width="150" height="150">
           </div>
           <div class="col-md-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Artikel</strong></h5>
-              <p class="card-text"><small class="text-muted">1202 Artikel </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
+              <p class="card-text"><small class="text-muted">1202 Artikel </small><small class="text-muted"> 23 Kategori </small></p>
             </div>
           </div>
         </div>
         <div class="row no-gutters">
           <div class="col-md-12 p-2">
             <p class="card-text">Memperluas wawasan pengetahuan seputar ilmu komputasi dengan membaca artikel.</p>
-            <a href="{{ url('/articles')}}" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+            <a href="{{ url('/articles')}}" class="btn btn-outline-primary btn-sm px-4 ml-5 mb-3">Kunjungi</a>
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-5">
-      <div class="card mb-3">
+      <div class="card mb-3 shadow">
         <div class="row no-gutters">
           <div class="col-md-4 p-2">
-            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
+            <img src="{{ asset('assets/img/logotutorial.png')}}" alt="..." width="150" height="150">
           </div>
           <div class="col-md-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Tutorial</strong></h5>
-              <p class="card-text"><small class="text-muted">1202 Tutorial </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
+              <p class="card-text"><small class="text-muted">1202 Tutorial </small><small class="text-muted"> 23 Kategori </small></p>
             </div>
           </div>
         </div>
         <div class="row no-gutters">
           <div class="col-md-12 p-2">
             <p class="card-text">Pecahkan masalah komputasi dengan mempelajari tutorial yang relevan terhadap permasalahan yang dihadapi.</p>
-            <a href="{{ url('/tutorials') }}" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+            <a href="{{ url('/tutorials') }}" class="btn btn-outline-primary btn-sm px-4 ml-5 mb-3">Kunjungi</a>
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-5">
-      <div class="card mb-3">
+      <div class="card mb-3 shadow">
         <div class="row no-gutters">
           <div class="col-md-4 p-2">
-            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
+            <img src="{{ asset('assets/img/logokelas.png')}}" alt="..." width="150" height="150">
           </div>
           <div class="col-md-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Kelas</strong></h5>
-              <p class="card-text"><small class="text-muted">1202 Kelas </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
+              <p class="card-text"><small class="text-muted">1202 Kelas </small><small class="text-muted"> 23 Kategori </small></p>
             </div>
           </div>
         </div>
         <div class="row no-gutters">
           <div class="col-md-12 p-2">
             <p class="card-text">Mendalami keilmuan komputer dengan mengikuti kelas-kelas yang disediakan secara bebas.</p>
-            <a href="{{ url('/classes') }}" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+            <a href="{{ url('/classes') }}" class="btn btn-outline-primary btn-sm px-4 ml-5 mb-3">Kunjungi</a>
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-5">
-      <div class="card mb-3">
+      <div class="card mb-3 shadow">
         <div class="row no-gutters">
           <div class="col-md-4 p-2">
-            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
+            <img src="{{ asset('assets/img/logovideo.png')}}" alt="..." width="150" height="150">
           </div>
           <div class="col-md-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Video</strong></h5>
-              <p class="card-text"><small class="text-muted">1202 Video </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
+              <p class="card-text"><small class="text-muted">1202 Video </small><small class="text-muted"> 23 Kategori </small></p>
             </div>
           </div>
         </div>
         <div class="row no-gutters">
           <div class="col-md-12 p-2">
             <p class="card-text">Tingkatkan pemahaman materi dengan menonton video pembelajaran.</p>
-            <a href="https://www.youtube.com/c/PengaosanKomputasi" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+            <a href="https://www.youtube.com/c/PengaosanKomputasi" class="btn btn-outline-primary btn-sm px-4 ml-5 mb-3">Kunjungi</a>
           </div>
         </div>
       </div>
     </div>
     <div class="col-md-5">
-      <div class="card mb-3">
+      <div class="card mb-3 shadow">
         <div class="row no-gutters">
           <div class="col-md-4 p-2">
-            <img src="{{ asset('assets/img/img1.jpg')}}" alt="..." width="150" height="150">
+            <img src="{{ asset('assets/img/logobuku.png')}}" alt="..." width="150" height="150">
           </div>
           <div class="col-md-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>E-Book</strong></h5>
-              <p class="card-text"><small class="text-muted">1202 E-Book </small><small class="text-muted"> 23 Kategori </small><small class="text-muted"> 22313 Pengunjung</small></p>
+              <p class="card-text"><small class="text-muted">1202 E-Book </small><small class="text-muted"> 23 Kategori </small></p>
             </div>
           </div>
         </div>
         <div class="row no-gutters">
           <div class="col-md-12 p-2">
             <p class="card-text">Tingkatkan pengetahuan dengan cara rajin membaca E-Book secara bebas.</p>
-            <a href="#" class="btn btn-primary btn-sm px-4">Kunjungi</a>
+            <a href="#" class="btn btn-outline-primary btn-sm px-4 ml-5 mb-3">Kunjungi</a>
           </div>
         </div>
       </div>

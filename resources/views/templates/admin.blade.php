@@ -59,11 +59,11 @@
       </nav>
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
-          <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+          <div class="sidebar-brand mt-3">
+            <a href="{{ url('/')}}"><img src="{{asset('assets/img/brand.png')}}" height="30" class="d-inline-block align-top" alt=""></a>
           </div>
-          <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+          <div class="sidebar-brand sidebar-brand-sm mt-3">
+            <a href="{{ url('/')}}"><img src="{{asset('assets/img/brand.png')}}" height="20" class="d-inline-block align-top" alt=""></a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -74,6 +74,18 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('posts.index') }}">List Post</a></li>
                 <li><a class="nav-link" href="{{ url('posts/trash') }}">Trash</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-user"></i> <span>Kelas</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ route('classes.index') }}">List Kelas</a></li>
+              </ul>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ url('classes/trash') }}">Trash Kelas</a></li>
+              </ul>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ route('modules.index') }}">List Modul</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
