@@ -54,7 +54,7 @@ class FrontendclassesController extends Controller
         $kelas = Kelas::where('slug', $slug)->first();
         $modules = Module::where('kelas_id', $kelas->id)->paginate(1);
         $categories = Category::all();
-        $listModules = Module::all();
+        $listModules = Module::where('kelas_id', $kelas->id)->get();
         return view('classes.show', compact('kelas', 'categories', 'modules', 'listModules'));
     }
 
