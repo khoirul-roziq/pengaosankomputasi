@@ -27,7 +27,9 @@
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" style="z-index:9999">
-        <a class="navbar-brand" href="{{ url('/') }}"> <strong>PK</strong></a>
+        <a class="navbar-brand" href="{{ url('/')}}">
+            <img src="{{asset('assets/img/brand.png')}}" height="30" class="d-inline-block align-top" alt="">
+        </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -29,22 +29,14 @@
         @foreach($posts as $post)
         <div class="card mb-3 mx-2">
             <div class="row no-gutters">
-                <div class="col-md-3">
+                <div class="col-lg-4 my-auto">
                     <img src="{{ asset($post->image) }}" class="m-3" alt="..." width="300">
                 </div>
-                <div class="col-md-9 my-auto">
+                <div class="col-lg-8 my-auto">
                     <div class="card-body">
                         <h5 class="card-title">{{ $post->title }}</h5>
                         <hr>
-                        <span class="card-text">Kategori : <span class="text-info">
-                                @foreach( $categories as $category)
-                                @if($post->category_id == $category->id)
-                                {{ $category->name }}
-                                @endif
-                                @endforeach
-                            </span></span>
-                        <br>
-                        <span class="card-text">Penulis : <span class="text-info">{{ $post->users->name }}</span></span>
+                        <p>{{ $post->metades }}</p>
                         <p class="card-text"><small class="text-muted">Pembaharuan Terakhir {{ $post->tanggal }}</small></p>
                         <a href="{{ url('articles/'.$post->slug) }}" class="btn btn-primary btn-sm">Baca Artikel</a>
                     </div>
