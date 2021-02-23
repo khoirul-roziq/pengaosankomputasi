@@ -14,6 +14,14 @@
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito+Sans&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: #444;
+        }
+    </style>
 
     <title>Kelas | Pengaosan Komputasi</title>
 </head>
@@ -21,7 +29,7 @@
 <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" style="z-index:9999">
-        <a class="navbar-brand" href="{{ url('/') }}"> <strong>PK</strong></a>
+        <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('assets/img/brand.png')}}" height="30" class="d-inline-block align-top" alt=""></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -43,10 +51,10 @@
                                 <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
                                 <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z" />
                             </svg> Tutorial</a>
-                        <a class="dropdown-item" href="{{ url('/classes') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                        <a class="dropdown-item" href="{{ url('/kelas') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
                                 <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
                             </svg> Kelas</a>
-                        <a class="dropdown-item" href="https://www.youtube.com/channel/UCQ7x8K2aTpN4sHWquWbKweA"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-play" viewBox="0 0 16 16">
+                        <a class="dropdown-item" href="https://www.youtube.com/c/pengaosankomputasi"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-play" viewBox="0 0 16 16">
                                 <path d="M6 10.117V5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43z" />
                                 <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
                             </svg> Video</a>
@@ -72,7 +80,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb px-5">
             <li class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="{{ url('/articles') }}">Kelas</a></li>
+            <li class="breadcrumb-item"><a href="{{ url('/kelas') }}">Kelas</a></li>
             <li class="breadcrumb-item active" aria-current="page">Daftar Kelas</li>
         </ol>
     </nav>
@@ -80,9 +88,9 @@
     <div class="row justify-content-center">
         <div class="alert alert-success col-md-11 py-5" role="alert">
             <h4 class="alert-heading mb-4">Daftar Kelas Pembelajaran</h4>
-            <p>Kelas pembelajaran yang ada di Website Pengaosan Komputasi bisa diakses<br>secara bebas oleh siapapun, kapanpun dan di manapun!</p>
             <hr>
-            <p class="mb-0">Materi yang tersedia disemua kelas berhubungan dengan ilmu komputasi</p>
+            <p>Kelas pembelajaran yang ada di Website Pengaosan Komputasi bisa diakses<br>secara bebas oleh siapapun, kapanpun dan di manapun!</p>
+
         </div>
     </div>
 
@@ -90,38 +98,38 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Semua</a>
+                    <a class="nav-link active" href="#">Semua Kelas</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Pemrograman</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Sistem Operasi</a>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="card-body">
-            @foreach($posts as $post)
+            @foreach($classes as $kelas)
             <div class="card mb-3 mx-2">
                 <div class="row no-gutters">
                     <div class="col-md-3">
-                        <img src="{{ asset($post->image) }}" class="m-3" alt="..." width="280">
+                        <img src="{{ asset($kelas->thumbnail) }}" class="m-3" alt="..." width="280">
                     </div>
                     <div class="col-md-9 my-auto">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $post->title }}</h5>
+                            <h5 class="card-title"><strong>{{ $kelas->name }}</strong></h5>
                             <hr>
                             <span class="card-text">Kategori : <span class="text-info">
                                     @foreach( $categories as $category)
-                                    @if($post->category_id == $category->id)
+                                    @if($kelas->category_id == $category->id)
                                     {{ $category->name }}
                                     @endif
                                     @endforeach
                                 </span></span>
                             <br>
-                            <span class="card-text">Penulis : <span class="text-info">{{ $post->users->name }}</span></span>
-                            <p class="card-text"><small class="text-muted">Pembaharuan Terakhir 8 Februari 2021</small></p>
-                            <a href="{{ url('classes/'.$post->slug) }}" class="btn btn-primary btn-sm">Mulai Belajar</a>
+                            <span class="card-text">Mentor : <span class="text-info">{{ $kelas->mentor }}</span></span>
+                            <p class="card-text"><small class="text-muted">Pembaharuan Terakhir {{ $kelas->date }}</small></p>
+                            <a href="{{ url('kelas/'.$kelas->slug) }}" class="btn btn-primary btn-sm">Mulai Belajar</a>
                         </div>
                     </div>
                 </div>

@@ -18,7 +18,7 @@ class CategoryController extends Controller
     {
         $category = Category::simplePaginate(5);
         $count = Category::all()->count();
-        return view('admin.category.index', compact('category'), compact('count'))->with('title', 'Category');
+        return view('admin.category.index', compact('category', 'count'))->with('title', 'Category');
     }
 
     /**

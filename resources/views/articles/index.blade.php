@@ -13,9 +13,8 @@
 
 <div class="jumbotron bg-dark text-white">
     <h1 class="display-4">Daftar Artikel</h1>
-    <p class="lead">Memperluas wawasan pengetahuan seputar ilmu komputasi dengan membaca artikel.</p>
     <hr class="my-4 bg-warning">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p class="lead">Memperluas wawasan pengetahuan seputar ilmu komputasi dengan membaca artikel</p>
 </div>
 
 <div class="card">

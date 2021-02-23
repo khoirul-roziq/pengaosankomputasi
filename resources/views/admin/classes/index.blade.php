@@ -7,7 +7,7 @@
 </div>
 @endif
 <a href="{{ route('classes.create') }}" class="btn btn-info btn-sm m-3">Buat Kelas</a>
-<a href="#" class="btn btn-warning btn-sm m-3">Lihat Kelas</a>
+<a href="{{ url('/kelas') }}" class="btn btn-warning btn-sm m-3">Lihat Kelas</a>
 
 <table class="table table-striped table-hover">
     <thead>

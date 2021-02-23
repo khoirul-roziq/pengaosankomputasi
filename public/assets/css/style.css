@@ -2,13 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    background-image: url(../img/bg1.png);
-    background-position: top right;
-    background-repeat: no-repeat;
-    background-size: 50vmax;
-}
-
 .navbar {
     padding-left: 6%;
     padding-right: 6%;
@@ -22,25 +15,35 @@ body {
     margin-left: 15px;
     margin-right: 15px;
 }
-
+.jumbotron {
+    background-image: url(../img/header-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
 /* landing page */
 .landingPage {
-    padding-top: 220px;
-    width: 50%;
-    margin-left: 6%;
+    padding-top: 170px;
+    padding-bottom: 70px;
+    width: 100%;
+    padding-left: 6%;
+    padding-right: 6%;
 }
 .landingPage h2 {
-    color: rgb(62, 157, 212);
+    color: white;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+    font-weight: bolder;
 }
 .landingPage hr {
-    border: 2px solid orange;
+    border: 1px solid yellow;
     margin-inline-start: 0;
     width: 80%;
 }
 .landingPage p {
-    color: rgb(104, 104, 104);
+    color: white;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
     font-size: large;
     line-height: 30px;
+    font-weight: bold;
 }
 
 /* end landing page */
@@ -98,9 +101,18 @@ body {
 @media screen and (max-width: 768px) {
     .landingPage {
         padding-top: 100px;
+    }
+    .landingPage p {
+        font-size: medium;
+        line-height: 30px;
+    }
+    .landingPage hr {
         width: 100%;
     }
     .landingPage h2 {
+        font-size: 28px;
+    }
+    /* .landingPage h2 {
         color: rgb(62, 157, 212);
         font-size: large;
     }
@@ -115,8 +127,8 @@ body {
         line-height: 20px;
     }
     #carouselExampleCaptions {
-        margin-top: 50px;
-    }
+        padding-top: 60px;
+    } */
 }
 
 @media screen and (max-width: 576px) {
@@ -125,9 +137,8 @@ body {
     }
     .landingPage {
         padding-top: 70px;
-        width: 100%;
     }
-    .landingPage h2 {
+    /*.landingPage h2 {
         color: rgb(62, 157, 212);
         font-size: small;
     }
@@ -140,8 +151,8 @@ body {
         color: rgb(104, 104, 104);
         font-size: x-small;
         line-height: 20px;
-    }
-    #carouselExampleCaptions {
+    } */
+    /* #carouselExampleCaptions {
         margin-top: 30px;
-    }
+    } */
 }

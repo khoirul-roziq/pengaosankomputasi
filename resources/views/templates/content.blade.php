@@ -22,6 +22,13 @@
   <link rel="stylesheet" href="{{ url('stisla/assets/css/style.css') }}">
   <link rel="stylesheet" href="{{ url('stisla/assets/css/components.css') }}">
   <link type="text/css" href="{{ url('ckeditor/sample/css/sample.css') }}" rel="stylesheet" media="screen" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+  </style>
 </head>
 
 <body>
@@ -83,7 +90,7 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-user"></i> <span>Kelas</span></a>
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Kelas</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('classes.index') }}">List Kelas</a></li>
               </ul>
@@ -92,6 +99,9 @@
               </ul>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('modules.index') }}">List Modul</a></li>
+              </ul>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ url('modules/trash') }}">Trash Modul</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">

@@ -11,6 +11,7 @@ use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\ModulesController;
 use App\Http\Controllers\TutorialsController;
+use App\Http\Controllers\FrontendclassesController;
 
 
 /*
@@ -35,6 +36,9 @@ Route::get('/articles/{slug}', [ArticlesController::class, 'show']);
 Route::resource('/tutorials', TutorialsController::class);
 Route::get('/tutorials/{slug}', [TutorialsController::class, 'show']);
 
+Route::resource('/kelas', FrontendclassesController::class);
+Route::get('/kelas/{slug}', [FrontendclassesController::class, 'show']);
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::resource('/category', CategoryController::class);
@@ -48,6 +52,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/classes/restore/{id}', [ClassesController::class, 'restore']);
     Route::delete('/classes/kill/{id}', [ClassesController::class, 'kill']);
     Route::resource('/classes', ClassesController::class);
+    Route::get('/modules/trash', [ModulesController::class, 'trash']);
+    Route::get('/modules/restore/{id}', [ModulesController::class, 'restore']);
+    Route::delete('/modules/kill/{id}', [ModulesController::class, 'kill']);
     Route::resource('/modules', ModulesController::class);
 });
 

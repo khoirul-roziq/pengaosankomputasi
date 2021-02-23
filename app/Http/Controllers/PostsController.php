@@ -34,9 +34,8 @@ class PostsController extends Controller
      */
     public function create()
     {
-        $tags = Tag::all();
         $categories = Category::all();
-        return view('admin.posts.create', compact('categories', 'tags'))->with('title', 'Tambah Post');
+        return view('admin.posts.create', compact('categories'))->with('title', 'Tambah Post');
     }
 
     /**
@@ -72,10 +71,6 @@ class PostsController extends Controller
 
         $query = $post->save();
 
-
-
-        $post->tags()->attach($request->tags);
-
         if ($query) {
             return back()->with('success', 'Anda Berhasil Membuat Post!');
         } else {
@@ -104,9 +99,8 @@ class PostsController extends Controller
     public function edit($id)
     {
         $categories = Category::all();
-        $tags = Tag::all();
         $post = Post::findorfail($id);
-        return view('admin.posts.edit', compact('post', 'tags', 'categories'))->with('title', 'Edit Post');
+        return view('admin.posts.edit', compact('post', 'categories'))->with('title', 'Edit Post');
     }
 
     /**
@@ -140,8 +134,6 @@ class PostsController extends Controller
             'slug' => Str::slug($request->title),
             'content' => $request->content,
         ]);
-
-        $post->tags()->sync($request->tags);
 
         return redirect('posts')->with('status', 'Data Post Berhasil Diubah!');
     }

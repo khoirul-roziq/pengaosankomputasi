@@ -77,7 +77,7 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-user"></i> <span>Kelas</span></a>
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Kelas</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('classes.index') }}">List Kelas</a></li>
               </ul>
@@ -87,6 +87,9 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="{{ route('modules.index') }}">List Modul</a></li>
               </ul>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="{{ url('modules/trash') }}">Trash Modul</a></li>
+              </ul>
             </li>
             <li class="nav-item dropdown">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-clipboard"></i> <span>Kategori</span></a>
@@ -94,12 +97,6 @@
                 <li><a class="nav-link" href="{{ route('category.index') }}">List Category</a></li>
                 <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
                 <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="far fa-bookmark"></i> <span>Tag</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="nav-link" href="{{ route('tags.index') }}">List Tag</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">

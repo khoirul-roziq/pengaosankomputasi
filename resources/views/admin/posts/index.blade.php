@@ -17,7 +17,6 @@
             <th>Judul Posts</th>
             <th>Kategori</th>
             <th>Type</th>
-            <th>Daftar Tag</th>
             <th>Creator</th>
             <th>Thumbnail</th>
             <th>Aksi</th>
@@ -31,12 +30,6 @@
             <td>{{ $result->title }}</td>
             <td>{{ $result->category->name }}</td>
             <td>{{ $result->type }}</td>
-            <td>
-                @foreach($result->tags as $tag)
-                <span class="badge bg-info my-1">{{ $tag->name }}</span>
-                @endforeach
-
-            </td>
             <td>{{ $result->users->name }}</td>
             <td><img src="{{ asset($result->image) }}" alt="Thumbnail" class="img-fluid" width="100"></td>
             <td>

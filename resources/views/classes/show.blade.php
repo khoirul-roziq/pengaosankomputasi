@@ -11,6 +11,35 @@
 
     <!-- my style -->
     <link rel="stylesheet" href="{{ url('assets/css/styleClasses.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+        svg {
+            height: 30px;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: #555;
+        }
+
+
+        .pin nav p,
+        .pin nav .hidden,
+        .paginasi nav .flex-1 {
+            display: none;
+        }
+
+        .sekrolside {
+            max-height: 500px;
+            overflow-y: scroll;
+        }
+
+        .sekrolbody {
+            max-height: 700px;
+            overflow-y: scroll;
+        }
+    </style>
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito+Sans&display=swap" rel="stylesheet">
@@ -20,31 +49,45 @@
 
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top" style="z-index:9999">
-        <a class="navbar-brand" href="{{ url('/') }}"> <strong>PK</strong></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" style="z-index:9999">
+        <a class="navbar-brand" href="{{ url('/') }}"><img src="{{asset('assets/img/brand.png')}}" height="30" class="d-inline-block align-top" alt=""></a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url('/') }}">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/articles') }}">Artikel</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Fasilitas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url('/articles') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                                <path d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
+                            </svg> Artikel</a>
+                        <a class="dropdown-item" href="{{ url('/tutorials') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-square" viewBox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z" />
+                            </svg> Tutorial</a>
+                        <a class="dropdown-item" href="{{ url('/kelas') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                            </svg> Kelas</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/c/pengaosankomputasi"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-play" viewBox="0 0 16 16">
+                                <path d="M6 10.117V5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43z" />
+                                <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                            </svg> Video</a>
+                        <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-code" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.646 5.646a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L10.293 8 8.646 6.354a.5.5 0 0 1 0-.708zm-1.292 0a.5.5 0 0 0-.708 0l-2 2a.5.5 0 0 0 0 .708l2 2a.5.5 0 0 0 .708-.708L5.707 8l1.647-1.646a.5.5 0 0 0 0-.708z" />
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                            </svg> E-Book</a>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/') }}">Tutorial</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/classes') }}">Kelas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">E-book</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/profile') }}">Penulis</a>
+                    <a class="nav-link" href="{{ url('/profile') }}">Author</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/login') }}"><span class="badge badge-dark py-2 px-3">Login</span></a>
@@ -58,19 +101,25 @@
         <span class="text mx-3">Beranda</span>|<span class="text mx-3">Kelas</span>|<span class="text mx-3">Daftar Kelas</span>|<span class="text mx-3 text-info">Materi</span>
     </div>
 
-    <div class="card mb-3 mx-5">
+    <div class="card mb-3 mx-2 ">
         <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="{{ asset('/assets/img/img3.jpg') }}" alt="..." width="380" height="250" class="m-3">
+            <div class="col-md-3">
+                <img src="{{ asset($kelas->thumbnail) }}" alt="..." width="300" class="m-3">
             </div>
-            <div class="col-md-8 my-auto">
+            <div class="col-md-9 my-auto">
                 <div class="card-body">
-                    <h2 class="card-title">Judul Artikel Untuk Belajar Tutorial</h2>
-                    <span class="card-text">Disusun Oleh: <span class="text-danger">Khoirul Roziq</span></span><br>
-                    <span class="card-text">Kategori: <span class="text-danger">Pemrograman</span></span><br>
-                    <span class="card-text">Materi: <span class="text-danger">Java</span></span><br>
-                    <span class="card-text">Tag: <span class="text-danger">Java, Pemrograman, Komputer</span></span><br>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h2 class="card-title">{{ $kelas->name}}</h2>
+                    <span class="card-text">Mentor : <span class="text-danger">{{ $kelas->mentor }}</span></span><br>
+                    <span class="card-text">Kategori : <span class="text-danger">@foreach( $categories as $category)
+                            @if($kelas->category_id == $category->id)
+                            {{ $category->name }}
+                            @endif
+                            @endforeach</span></span><br>
+                    <span class="card-text">Jumlah Modul : <span class="text-danger">{{ $modules->total() }}</span></span><br>
+                    <p class="card-text"><small class="text-muted">Terakhir diperbaharui {{ $kelas->date }}</small></p>
+                    <div class="pin mt-4">
+                        <span>{{ $modules->onEachSide(5)->links() }}</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,35 +127,84 @@
 
     <div class="row justify-content-center mb-5">
         <div class="col-md-8">
-            <div class="card text-center">
+            <div class="card">
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Pengantar</a>
+                            <a class="nav-link
+                            @if( $modules->currentPage() == 1)
+                            active
+                            @endif
+                            " href="{{ url('/kelas/'.$kelas->slug.'?page=1')}}">Pengantar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Daftar Isi</a>
+                            <a class="nav-link
+                            @if( $modules->currentPage() == 2)
+                            active
+                            @endif" href="{{ url('/kelas/'.$kelas->slug.'?page=2')}}">Daftar Isi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Materi</a>
+                            <a class="nav-link @if( $modules->currentPage() != 1 && $modules->currentPage() != 2)
+                            active
+                            @endif" href="{{ url('/kelas/'.$kelas->slug.'?page=3')}}">Materi</a>
                         </li>
                     </ul>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card-body sekrolbody">
+                    @foreach($modules as $module)
+                    <h1 class="mb-4 text-danger"><strong>{{ $module->title }}</strong></h1>
+                    {!! $module->content !!}
+                    @endforeach
+                    @if($modules->currentPage() == 2)
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Judul Modul</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($listModules as $module)
+                            <tr>
+                                <th scope="row">{{ $module->nomor_module }}</th>
+                                <td><a href="{{ url('kelas/'.$kelas->slug.'?page='.$module->nomor_module) }}">{{ $module->title }}</a></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    @endif
                 </div>
+            </div>
+            <div class="my-4 paginasi">
+                {{ $modules->onEachSide(5)->links() }}
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card">
+            <div class="card sekrolside">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <h4 class="card-title text-center text-danger"><b>Daftar Isi</b></h4>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Judul Modul</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($listModules as $module)
+                            <tr>
+                                <th scope="row">{{ $module->nomor_module }}</th>
+                                <td>
+                                    @if($modules->currentPage() == $module->nomor_module)
+                                    {{ $module->title }}
+                                    @else
+                                    <a href="{{ url('kelas/'.$kelas->slug.'?page='.$module->nomor_module) }}">{{ $module->title }}</a>
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

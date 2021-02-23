@@ -2,7 +2,7 @@
 @section('title', 'Situs Belajar Keilmuan Komputasi Secara Gratis dan Media Berbagi Pengalaman')
 @section('main')
 
-<div class="landingPage">
+<!-- <div class="landingPage">
   <h2 class="my-3"><b>PENGAOSAN KOMPUTASI</b></h2>
   <hr>
   <p>Situs Belajar Keilmuan Komputasi Secara Gratis dan Media Berbagi Pengalaman <br>
@@ -11,14 +11,21 @@
   </p>
   <a href="#fasilitas" class="btn btn-outline-primary">Mulai Belajar</a>
   <button class="btn btn-"></button>
+</div> -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="landingPage">
+      <h2 class="my-3"><b>PENGAOSAN KOMPUTASI</b></h2>
+      <hr>
+      <p>Situs Belajar <span class="text-warning">Keilmuan Komputasi</span> Secara Gratis dan Media Berbagi Pengalaman <br>
+        Jangan Lupa Berdoa Sebelum dan Sesudah Belajar Semoga Keberkahan Terlimpahkan Untuk Kita Semua
+      </p>
+      <a href="#fasilitas" class="btn btn-warning">Mulai Belajar</a>
+      <button class="btn btn-"></button>
+    </div>
+  </div>
 </div>
-
-<div class="container text-center mt-5 pt-5 mb-5">
-  <h2 class="text-danger"><strong>Belajar di<br>Situs Pengaosan Komputasi</strong></h2>
-  <p>Ada 5 Fasilitas Media Belajar Yang Bisa Digunakan Untuk Meningkatkan<br>
-    Kemampuan Dalam Keilmuan Komputer</p>
-</div>
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+<!-- <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -55,9 +62,9 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+</div> -->
 
-<section class="posts">
+<!-- <section class="posts">
   <h2 class="text-center my-4 text-primary">Apasih Yang Terbaru?</h2>
   <div class="row justify-content-center">
     <div class="col-md-6">
@@ -88,12 +95,14 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <hr id="fasilitas" width="1">
 <br>
-<section class="type mx-5">
-  <h2 class="mb-4 mt-5 text-primary text-center">Mulai Belajar Komputasi Sekarang!</h2>
+<section class="type mx-2">
+  <h2 class="mb-4 mt-2 text-primary text-center">Mulai Belajar Komputer Sekarang!</h2>
+  <p class="text-center">Ada 5 Fasilitas Media Belajar Yang Bisa Digunakan Untuk Meningkatkan<br>
+    Kemampuan Dalam Keilmuan Komputer</p>
   <hr class="bg-warning" width="50%" style="border: 1px solid orange;">
   <div class="row justify-content-center">
     <div class="col-md-5">
@@ -102,10 +111,10 @@
           <div class="col-md-4 p-2">
             <img src="{{ asset('assets/img/logoartikel.png')}}" alt="..." width="150" height="150">
           </div>
-          <div class="col-md-8 my-auto">
+          <div class="col-lg-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Artikel</strong></h5>
-              <p class="card-text"><small class="text-muted">1202 Artikel </small><small class="text-muted"> 23 Kategori </small></p>
+              <p class="card-text"><small class="text-muted">{{ $articles }} Postingan Artikel</small></p>
             </div>
           </div>
         </div>
@@ -123,10 +132,10 @@
           <div class="col-md-4 p-2">
             <img src="{{ asset('assets/img/logotutorial.png')}}" alt="..." width="150" height="150">
           </div>
-          <div class="col-md-8 my-auto">
+          <div class="col-lg-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Tutorial</strong></h5>
-              <p class="card-text"><small class="text-muted">1202 Tutorial </small><small class="text-muted"> 23 Kategori </small></p>
+              <p class="card-text"><small class="text-muted">{{ $tutorials }} Postingan Tutorial</small></p>
             </div>
           </div>
         </div>
@@ -144,17 +153,17 @@
           <div class="col-md-4 p-2">
             <img src="{{ asset('assets/img/logokelas.png')}}" alt="..." width="150" height="150">
           </div>
-          <div class="col-md-8 my-auto">
+          <div class="col-lg-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Kelas</strong></h5>
-              <p class="card-text"><small class="text-muted">1202 Kelas </small><small class="text-muted"> 23 Kategori </small></p>
+              <p class="card-text"><small class="text-muted">{{ $classes }} Kelas dan </small><small class="text-muted"> {{ $modules }} Modul Pembelajaran</small></p>
             </div>
           </div>
         </div>
         <div class="row no-gutters">
           <div class="col-md-12 p-2">
             <p class="card-text">Mendalami keilmuan komputer dengan mengikuti kelas-kelas yang disediakan secara bebas.</p>
-            <a href="{{ url('/classes') }}" class="btn btn-outline-primary btn-sm px-4 ml-5 mb-3">Kunjungi</a>
+            <a href="{{ url('/kelas') }}" class="btn btn-outline-primary btn-sm px-4 ml-5 mb-3">Kunjungi</a>
           </div>
         </div>
       </div>
@@ -165,10 +174,10 @@
           <div class="col-md-4 p-2">
             <img src="{{ asset('assets/img/logovideo.png')}}" alt="..." width="150" height="150">
           </div>
-          <div class="col-md-8 my-auto">
+          <div class="col-lg-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>Video</strong></h5>
-              <p class="card-text"><small class="text-muted">1202 Video </small><small class="text-muted"> 23 Kategori </small></p>
+              <p class="card-text"><small class="text-muted">10 Video </small><small class="text-muted">dan 4 Playlist </small></p>
             </div>
           </div>
         </div>
@@ -186,10 +195,10 @@
           <div class="col-md-4 p-2">
             <img src="{{ asset('assets/img/logobuku.png')}}" alt="..." width="150" height="150">
           </div>
-          <div class="col-md-8 my-auto">
+          <div class="col-lg-8 my-auto">
             <div class="card-body">
               <h5 class="card-title"><strong>E-Book</strong></h5>
-              <p class="card-text"><small class="text-muted">1202 E-Book </small><small class="text-muted"> 23 Kategori </small></p>
+              <p class="card-text"><small class="text-muted">- E-Book </small><small class="text-muted"> - Kategori </small></p>
             </div>
           </div>
         </div>

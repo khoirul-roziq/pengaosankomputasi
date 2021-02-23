@@ -3,31 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
 use App\Models\Kelas;
 use App\Models\Module;
 use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 
-class BlogController extends Controller
+class FrontendclassesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Post $posts)
+    public function index()
     {
-        $posts = DB::table('posts')
-            ->orderByRaw('updated_at - created_at DESC')
-            ->get();
-        $classes = Kelas::all()->count();
-        $modules = Module::all()->count();
-        $typeAr = "Artikel";
-        $typeTu = "Tutorial";
-        $articles = Post::where('type', $typeAr)->count();
-        $tutorials = Post::where('type', $typeTu)->count();
-        return view('index', compact('posts', 'classes', 'modules', 'articles', 'tutorials'));
+        $classes = Kelas::all();
+        $categories = Category::all();
+        return view('classes.index', compact('classes', 'categories'));
     }
 
     /**
@@ -57,9 +49,13 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $kelas = Kelas::where('slug', $slug)->first();
+        $modules = Module::where('kelas_id', $kelas->id)->paginate(1);
+        $categories = Category::all();
+        $listModules = Module::all();
+        return view('classes.show', compact('kelas', 'categories', 'modules', 'listModules'));
     }
 
     /**

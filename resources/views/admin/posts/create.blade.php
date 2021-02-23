@@ -1,5 +1,5 @@
 @extends('templates.content')
-
+@section('title', 'Buat Postingan')
 @section('main')
 
 
@@ -52,14 +52,6 @@
                 {{ $message }}
                 @enderror
             </div>
-        </div>
-        <div class="form-group">
-            <label>Pilih Tag</label>
-            <select class="form-control select2" multiple="" name="tags[]">
-                @foreach( $tags as $tag)
-                <option value="{{ $tag->id }}">{{ $tag->name}}</option>
-                @endforeach
-            </select>
         </div>
         <div class="form-group">
             <label>Thumbnail</label>

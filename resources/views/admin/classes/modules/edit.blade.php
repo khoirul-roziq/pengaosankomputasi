@@ -1,8 +1,8 @@
 @extends('templates.content')
-
+@section('title', 'Edit Modul')
 @section('main')
 
-<form action="{{ route('posts.update', $post->id) }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('modules.update', $module->id) }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('patch')
     @if (session('status'))
@@ -11,8 +11,8 @@
     </div>
     @endif
     <div class="form-group">
-        <label>Judul</label>
-        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $post->title }}">
+        <label>Judul Modul</label>
+        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $module->title }}">
         <div class="invalid-feedback">
             @error('title')
             {{ $message }}
@@ -20,65 +20,52 @@
         </div>
     </div>
     <div class="form-group">
-        <label>Kategori</label>
-        <select class="form-control @error('category_id') is-invalid @enderror" name="category_id" id="category_id">
+        <label>Penulis</label>
+        <input type="text" class="form-control @error('author') is-invalid @enderror" name="author" value="{{ $module->author }}">
+        <div class="invalid-feedback">
+            @error('author')
+            {{ $message }}
+            @enderror
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Kelas</label>
+        <select class="form-control @error('kelas_id') is-invalid @enderror" name="kelas_id" id="kelas_id">
             <option value="" holder>-- Pilih Kategori --</option>
-            @foreach( $categories as $category)
-            <option value="{{ $category->id }}" @if( $post->category_id == $category->id )
+            @foreach( $classes as $kelas)
+            <option value="{{ $kelas->id }}" @if( $module->kelas_id == $kelas->id )
                 selected
                 @endif
-                >{{ $category->name }}</option>
+                >{{ $kelas->name }}</option>
             @endforeach
         </select>
         <div class="invalid-feedback">
-            @error('category_id')
+            @error('kelas_id')
             {{ $message }}
             @enderror
         </div>
     </div>
     <div class="form-group">
-        <label>Type</label>
-        <select class="form-control @error('type') is-invalid @enderror" name="type" id="type">
-            <option value="{{$post->type}}" selected>-- Ubah Type --</option>
-            <option value="Artikel">Artikel</option>
-            <option value="Tutorial">Tutorial</option>
-        </select>
+        <label>Nomor Modul</label>
+        <input type="text" class="form-control @error('nomor_module') is-invalid @enderror" name="nomor_module" value="{{ $module->nomor_module }}">
         <div class="invalid-feedback">
-            @error('type')
-            {{ $message }}
-            @enderror
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Thumbnail</label>
-        <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
-        <div class="invalid-feedback">
-            @error('image')
-            {{ $message }}
-            @enderror
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Sumber Thumbnail</label>
-        <input type="text" class="form-control @error('sumberimg') is-invalid @enderror" name="sumberimg" value="{{ $post->sumberimg }}">
-        <div class="invalid-feedback">
-            @error('sumberimg')
+            @error('nomor_module')
             {{ $message }}
             @enderror
         </div>
     </div>
     <div class="form-group">
         <label>Tanggal</label>
-        <input type="text" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ $post->tanggal }}">
+        <input type="text" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ $module->date }}">
         <div class="invalid-feedback">
-            @error('tanggal')
+            @error('date')
             {{ $message }}
             @enderror
         </div>
     </div>
     <div class="form-group">
         <label>Meta Deskripsi</label>
-        <input type="text" class="form-control @error('metades') is-invalid @enderror" name="metades" value="{{ $post->metades }}">
+        <input type="text" class="form-control @error('metades') is-invalid @enderror" name="metades" value="{{ $module->metades }}">
         <div class="invalid-feedback">
             @error('metades')
             {{ $message }}
@@ -111,7 +98,7 @@
         <div class="grid-container">
             <div class="grid-width-100">
                 <textarea id="editor" name="content">
-                {{ $post->content }}
+                {{ $module->content }}
                 </textarea>
             </div>
         </div>

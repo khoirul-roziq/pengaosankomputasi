@@ -32,11 +32,11 @@
                 @endforeach
             </td>
             <td>
-                <form action="{{ route('modules.destroy', $result->id ) }}" method="post">
+                <form action="{{ url('modules/kill/'.$result->id) }}" method="post">
                     @csrf
                     @method('delete')
-                    <a href="{{ route('modules.edit', $result->id)}}"><span class="btn btn-primary btn-sm">Edit</span></a>
-                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus modules ini?');">Hapus</button></a>
+                    <a href="{{ url('modules/restore/'.$result->id) }}"><span class="btn btn-primary btn-sm">Restore</span></a>
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus modul ini?');">Hapus</button></a>
                 </form>
             </td>
         </tr>

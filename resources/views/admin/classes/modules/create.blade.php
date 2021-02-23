@@ -5,7 +5,7 @@
 
 
 <main>
-    <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('modules.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         @if (session('success'))
         <div class="alert alert-success">
@@ -36,19 +36,33 @@
             </div>
         </div>
         <div class="form-group">
-            <label>Nama Kelas</label>
-            <input type="text" class="form-control @error('classname') is-invalid @enderror" name="classname" value="{{ old('classname') }}">
+            <label>Kelas</label>
+            <select class="form-control @error('kelas_id') is-invalid @enderror" name="kelas_id" id="kelas_id">
+                <option value="" holder>-- Pilih Kelas --</option>
+                @foreach( $classes as $kelas)
+                <option value="{{ $kelas->id }}">{{ $kelas->name }}</option>
+                @endforeach
+            </select>
             <div class="invalid-feedback">
-                @error('classname')
+                @error('kelas_id')
+                {{ $message }}
+                @enderror
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Nomor Modul</label>
+            <input type="text" class="form-control @error('nomor_module') is-invalid @enderror" name="nomor_module" value="{{ old('nomor_module') }}">
+            <div class="invalid-feedback">
+                @error('nomor_module')
                 {{ $message }}
                 @enderror
             </div>
         </div>
         <div class="form-group">
             <label>Tanggal</label>
-            <input type="text" class="form-control @error('tanggal') is-invalid @enderror" name="tanggal" value="{{ old('tanggal') }}">
+            <input type="text" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}">
             <div class="invalid-feedback">
-                @error('tanggal')
+                @error('date')
                 {{ $message }}
                 @enderror
             </div>
@@ -94,7 +108,7 @@
             </div>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary btn-block">Simpan Post</button>
+            <button class="btn btn-primary btn-block">Simpan Modul</button>
         </div>
     </form>
 </main>
