@@ -94,18 +94,12 @@
         </div>
     </div>
 
-    <div class="card mx-5 mb-5">
+    <div class="card">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Semua Kelas</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Pemrograman</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sistem Operasi</a>
-                </li> -->
             </ul>
         </div>
         <div class="card-body">
@@ -113,7 +107,7 @@
             <div class="card mb-3 mx-2">
                 <div class="row no-gutters">
                     <div class="col-md-3">
-                        <img src="{{ asset($kelas->thumbnail) }}" class="m-3" alt="..." width="280">
+                        <img src="{{ asset($kelas->thumbnail) }}" class="m-3" alt="..." width="88%">
                     </div>
                     <div class="col-md-9 my-auto">
                         <div class="card-body">
