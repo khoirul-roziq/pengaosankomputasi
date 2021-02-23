@@ -50,8 +50,10 @@ class ArticlesController extends Controller
      */
     public function show($slug)
     {
+        $type = "Artikel";
+        $articles = Post::where('type', $type)->get();
         $post = Post::where('slug', $slug)->first();
-        return view('articles.show', compact('post'));
+        return view('articles.show', compact('post', 'articles'));
     }
 
     /**

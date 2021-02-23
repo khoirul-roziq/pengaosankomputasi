@@ -22,6 +22,7 @@
 
         body {
             font-family: 'Quicksand', sans-serif;
+            color: #555;
         }
     </style>
 

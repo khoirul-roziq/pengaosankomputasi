@@ -44,7 +44,7 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&family=Nunito+Sans&display=swap" rel="stylesheet">
 
-    <title>Kelas | Pengaosan Komputasi</title>
+    <title>{{ $kelas->name }} | Pengaosan Komputasi</title>
 </head>
 
 <body>
@@ -103,10 +103,10 @@
 
     <div class="card mb-3 mx-2 ">
         <div class="row no-gutters">
-            <div class="col-md-3">
+            <div class="col-lg-4">
                 <img src="{{ asset($kelas->thumbnail) }}" alt="..." width="300" class="m-3">
             </div>
-            <div class="col-md-9 my-auto">
+            <div class="col-lg-8 my-auto" style="border-left: 2px solid #999;">
                 <div class="card-body">
                     <h2 class="card-title">{{ $kelas->name}}</h2>
                     <span class="card-text">Mentor : <span class="text-danger">{{ $kelas->mentor }}</span></span><br>
@@ -118,7 +118,7 @@
                     <span class="card-text">Jumlah Modul : <span class="text-danger">{{ $modules->total() }}</span></span><br>
                     <p class="card-text"><small class="text-muted">Terakhir diperbaharui {{ $kelas->date }}</small></p>
                     <div class="pin mt-4">
-                        <span>{{ $modules->onEachSide(5)->links() }}</span>
+                        <span>{{ $modules->links() }}</span>
                     </div>
                 </div>
             </div>
@@ -176,7 +176,7 @@
                 </div>
             </div>
             <div class="my-4 paginasi">
-                {{ $modules->onEachSide(5)->links() }}
+                {{ $modules->links() }}
             </div>
         </div>
         <div class="col-md-3">
